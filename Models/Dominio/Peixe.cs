@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace WEBCOREADS2021.Models.Dominio
 {
-    public class Tipo
+    public class Peixe
     {
         public int id { get; set; }
-        public string descricao { get; set; }
-        public string municipio { get; set; }
-        public string outros { get; set; }
+        public string nome { get; set; }
+        public float peso { get; set; }
+        public string isca { get; set; }
 
-    }        
+    }
 }
