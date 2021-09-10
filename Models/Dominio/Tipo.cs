@@ -16,12 +16,19 @@ namespace WEBCOREADS2021.Models.Dominio
         [DisplayName("ID")]
         public int id { get; set; }
 
-        [StringLength(40)]
+        [StringLength(35, ErrorMessage ="Tamanho do campo inválido", MinimumLength =5)]
         [DisplayName("Descricao")]
         [Required(ErrorMessage ="Campo descricao é obrigatório")]
         public string descricao { get; set; }
 
+        [StringLength(25, ErrorMessage ="Tamanho do campo municipio inválido")]
+        [Required(ErrorMessage ="campo Municipio é obrigatório")]
+        [DisplayName("Municipio")]
         public string municipio { get; set; }
+
+        [StringLength(25, ErrorMessage = "Tamanho do campo outros inválido")]
+        [Required(ErrorMessage = "campo Outros é obrigatório")]
+        [DisplayName("Outros")]
         public string outros { get; set; }
 
     }
