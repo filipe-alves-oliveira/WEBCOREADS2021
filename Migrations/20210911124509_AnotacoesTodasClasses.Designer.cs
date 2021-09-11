@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WEBCOREADS2021.Models;
 
 namespace WEBCOREADS2021.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20210911124509_AnotacoesTodasClasses")]
+    partial class AnotacoesTodasClasses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -64,9 +66,10 @@ namespace WEBCOREADS2021.Migrations
                         .HasMaxLength(35)
                         .HasColumnType("nvarchar(35)");
 
-                    b.Property<int>("idade")
+                    b.Property<string>("idade")
+                        .IsRequired()
                         .HasMaxLength(35)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(35)");
 
                     b.Property<string>("nome")
                         .IsRequired()

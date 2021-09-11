@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WEBCOREADS2021.Models;
 
 namespace WEBCOREADS2021.Migrations
 {
     [DbContext(typeof(Contexto))]
-    partial class ContextoModelSnapshot : ModelSnapshot
+    [Migration("20210911115506_AnotacoesTipo")]
+    partial class AnotacoesTipo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,21 +29,17 @@ namespace WEBCOREADS2021.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("isca")
-                        .IsRequired()
-                        .HasMaxLength(35)
-                        .HasColumnType("nvarchar(35)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("nome")
-                        .IsRequired()
-                        .HasMaxLength(35)
-                        .HasColumnType("nvarchar(35)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("peso")
                         .HasColumnType("real");
 
                     b.HasKey("id");
 
-                    b.ToTable("Peixe");
+                    b.ToTable("Peixes");
                 });
 
             modelBuilder.Entity("WEBCOREADS2021.Models.Dominio.Pescador", b =>
@@ -55,29 +53,22 @@ namespace WEBCOREADS2021.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("cidade")
-                        .IsRequired()
-                        .HasMaxLength(35)
-                        .HasColumnType("nvarchar(35)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("estado")
-                        .IsRequired()
-                        .HasMaxLength(35)
-                        .HasColumnType("nvarchar(35)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("idade")
-                        .HasMaxLength(35)
-                        .HasColumnType("int");
+                    b.Property<string>("idade")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("nome")
-                        .IsRequired()
-                        .HasMaxLength(35)
-                        .HasColumnType("nvarchar(35)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
                     b.HasIndex("Premiacaoid");
 
-                    b.ToTable("Pescador");
+                    b.ToTable("Pescadores");
                 });
 
             modelBuilder.Entity("WEBCOREADS2021.Models.Dominio.Premiacao", b =>
@@ -88,22 +79,19 @@ namespace WEBCOREADS2021.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("colocacao")
-                        .HasMaxLength(35)
                         .HasColumnType("int");
 
                     b.Property<int?>("pescadorid")
                         .HasColumnType("int");
 
                     b.Property<string>("premio")
-                        .IsRequired()
-                        .HasMaxLength(35)
-                        .HasColumnType("nvarchar(35)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
                     b.HasIndex("pescadorid");
 
-                    b.ToTable("Premiacao");
+                    b.ToTable("Premiacoes");
                 });
 
             modelBuilder.Entity("WEBCOREADS2021.Models.Dominio.Tipo", b =>
@@ -114,9 +102,7 @@ namespace WEBCOREADS2021.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Municipio")
-                        .IsRequired()
-                        .HasMaxLength(35)
-                        .HasColumnType("nvarchar(35)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("descricao")
                         .IsRequired()
@@ -124,9 +110,7 @@ namespace WEBCOREADS2021.Migrations
                         .HasColumnType("nvarchar(35)");
 
                     b.Property<string>("outros")
-                        .IsRequired()
-                        .HasMaxLength(35)
-                        .HasColumnType("nvarchar(35)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("id");
 
