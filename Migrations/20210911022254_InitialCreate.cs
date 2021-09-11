@@ -28,7 +28,7 @@ namespace WEBCOREADS2021.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     descricao = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    municipio = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Municipio = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     outros = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>

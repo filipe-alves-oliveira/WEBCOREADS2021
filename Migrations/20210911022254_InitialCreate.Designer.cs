@@ -10,7 +10,7 @@ using WEBCOREADS2021.Models;
 namespace WEBCOREADS2021.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20210909170248_InitialCreate")]
+    [Migration("20210911022254_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -101,10 +101,10 @@ namespace WEBCOREADS2021.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("descricao")
+                    b.Property<string>("Municipio")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("municipio")
+                    b.Property<string>("descricao")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("outros")

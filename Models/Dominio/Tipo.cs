@@ -10,7 +10,7 @@ namespace WEBCOREADS2021.Models.Dominio
 
         public int id { get; set; }
         public string descricao { get; set; }
-        public string municipio { get; set; }
+        public string Municipio { get; set; }
         public string outros { get; set; }
 
     }

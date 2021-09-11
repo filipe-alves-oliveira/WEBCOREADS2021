@@ -99,12 +99,10 @@ namespace WEBCOREADS2021.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("descricao")
-                        .IsRequired()
-                        .HasMaxLength(35)
-                        .HasColumnType("nvarchar(35)");
+                    b.Property<string>("Municipio")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("municipio")
+                    b.Property<string>("descricao")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("outros")
@@ -112,7 +110,7 @@ namespace WEBCOREADS2021.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Tipo");
+                    b.ToTable("Tipos");
                 });
 
             modelBuilder.Entity("WEBCOREADS2021.Models.Dominio.Pescador", b =>
